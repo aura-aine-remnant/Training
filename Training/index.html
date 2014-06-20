@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html> <!--Open-->
+	<head><!--Open-->
+		
+	
+	<title>Feedback Form</title>
+
+		<!--Script tags and Links to CSS-->
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+
+		<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src = "js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/ajax.js"></script><!--My Ajax code-->
+		<script src="js/script.js"></script><!--My JS code-->
+
+		<link rel="stylesheet" type="text/css" href="css/style.css"><!--My CSS code-->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+	</head><!--Close-->
+
+<body><!--Open-->
+
+
+<div class = "navbar navbar-inverse navbar-static-top"><!--Open top navigation bar-->
+	<div class = "container">
+		<p class = "navbar-text pull-left">Aura Healthcare Feedback Form</p>
+			<button class="navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse"> 
+				<span class = "icon-bar"></span> 
+				<span class = "icon-bar"></span> 
+				<span class = "icon-bar"></span> 
+			</button>
+
+	<div class = "collapse navbar-collapse navHeaderCollapse">
+
+		<ul class="nav navbar-nav navbar-right ">
+			<li class="active"><a href="index.html">Home</a></li>
+		    <li class="dropdown">
+		   		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Social Media <b class = "caret"></b></a>
+				<ul class="dropdown-menu">
+					<li><a href="https://www.facebook.com/AuraHealthcareLtd" target="_blank">Facebook</a></li>	
+					<li><a href="https://twitter.com/Aura_Healthcare" target="_blank">Twitter</a></li>
+					<li><a href="#">Linkedin</a></li>		
+				</ul>
+
+		    </li>
+		</ul>
+	</div>
+	</div>
+</div><!--Close top navigation bar-->
+
+
+<br>
+<br>
+
+
+<div class="container"><!--Open Jumbotron Container-->
+	<div class="jumbotron">
+		<h2 align="center">Feedback Form</h2>
+	</div>
+
+</div><!--Close Jumbotron-->
+
+
+<div class="container"><!--Open Container to hold tabs and all of the Form-->
+	<ul class="nav nav-tabs nav-justified">
+    	<li class="active"><a href = "#section_1" data-toggle = "tab">Section 1</a></li>
+    	<li><a href = "#section_2" data-toggle = "tab">Section 2</a></li>
+    	<li><a href = "#section_3" data-toggle = "tab">Section 3</a></li>
+	</ul>
+
+<form class="form-inline"  id="myform" name="myform"  onsubmit="return (validate())"><!--Form open tag encloses entire document not section by section-->
+
+<div class="tab-content"> <!--Tab div to wrap the conecnts into three tab sections-->
+<br>
+	
+	<!--Section 1-->
+<div class="well tab-pane active" id="section_1"><!--action="mailto:arem1@hotmail.co.uk" used for testing-->
+	<h2>Personal Details</h2>
+		<p><b>Please fill in the details below:</b></p>
+			 
+			<b>First name:</b> <input type="text" class="form-control" name="First_Name" maxlength="30" style="width:200px">
+				
+			<b>Last name:</b> <input type="text" class="form-control" name="Last_Name" maxlength="30" style="width:200px"><br>
+		<br>
+
+			<p><b>Please select gender:</b></p>
+				<select class="form-control" name="Gender" align="right" style="width:200px">
+					<option value="0">-Please select-</option>
+        			<option value="Male">Male</option>
+        			<option value="Female">Female</option>
+        		</select>
+		<br>
+				
+			<p><b>Please provide your Date of Birth:</b></p>
+				<input type="date" class="form-control" name="DOB" max="2014-12-31" min="1914-12-31" style="width:200px"><br><!--max min date to set start and end years HTML5-->
+		<br>
+
+			<p><b>H+C Number:</b></p><!--pattern Regex code ensures only numbers not letters are used-->
+				<input type="text" class="form-control" name="HC_Number" pattern="[0-9]{10}" maxlength="10" align="left" placeholder="Ten Numbers Only" style="width:200px"> 
+
+				<select class="form-control" name="Ward" align="center" style="width:200px">
+        			<option value="0">-Ward-</option>
+        			<option value="Ward example 1">Ward example 1</option>
+        			<option value="Ward example 2">Ward example 2</option>
+        		</select>
+        			
+
+        		<select class="form-control" name="Consultant" align="right" style="width:200px">
+        			<option value="0">-Consultant-</option>
+        			<option value="Consultant example 1">Consultant example 1</option>
+        			<option value="Consultant example 1">Consultant example 2</option>
+        		</select><br>
+        		
+										
+        	<p><b>GP Name:</b></p><input type="text" class="form-control" name="GP" maxlength="30" placeholder="Dr."  style="width:200px"> <!--placeholder short hint HTML5-->
+        <br>
+        	<p><b>Practice:</b></p><input type="text" class="form-control" name="Practice" maxlength="40" style="width:200px">
+
+		
+</div><!--Section 1 closed div-->
+	
+		
+
+	<!--Section 2-->
+<div class="well tab-pane" id="section_2">
+	<h2>Rate Your Stay</h2>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor.</p>
+		
+			<p><b>How would you rate the care you received?</b></p>
+				<input id="radio1" type="radio" name="Care_rating" class="verypoor" value="Very Poor">
+					<label for="radio1">Very Poor</label>
+
+				<input id="radio2" type="radio" name="Care_rating" class="poor" value="Poor">
+					<label for="radio2">Poor</label>
+
+				<input id="radio3" type="radio" name="Care_rating" class="average" value="Average">
+					<label for="radio3">Average</label>
+
+				<input id="radio4" type="radio" name="Care_rating" class="good" value="Good">
+					<label for="radio4">Good</label>
+
+				<input id="radio5" type="radio" name="Care_rating" class="excellent" value="Excellent">
+					<label for="radio5">Excellent</label><br>
+		<br>
+			
+			<p><b>How would you rate the cleanliness of the hospital?<br> 
+			<em>(1 being very poor and 10 being Excellent)</em></b></p>
+				<input id="r1" type="radio" name="Cleanliness_rating" class="radio1" value="1">
+					<label for="r1">1</label>
+
+				<input id="r2" type="radio" name="Cleanliness_rating" class="radio2" value="2">
+					<label for="r2">2</label>
+
+				<input id="r3" type="radio" name="Cleanliness_rating" class="radio3" value="3">
+					<label for="r3">3</label>
+
+				<input id="r4" type="radio" name="Cleanliness_rating" class="radio4" value="4">
+					<label for="r4">4</label>
+
+				<input id="r5" type="radio" name="Cleanliness_rating" class="radio5" value="5">
+					<label for="r5">5</label>
+
+				<input id="r6" type="radio" name="Cleanliness_rating" class="radio6" value="6">
+					<label for="r6">6</label>
+
+				<input id="r7" type="radio" name="Cleanliness_rating" class="radio7" value="7">
+					<label for="r7">7</label>
+
+				<input id="r8" type="radio" name="Cleanliness_rating" class="radio8" value="8">
+					<label for="r8">8</label>
+
+				<input id="r9" type="radio" name="Cleanliness_rating" class="radio9" value="9">
+					<label for="r9">9</label>
+
+				<input id="r10" type="radio" name="Cleanliness_rating" class="radio10" value="10">
+					<label for="r10">10</label><br>
+</div><!--Section 2 closed div-->
+	
+
+		
+	<!--Section 3-->
+<div class="well tab-pane" id="section_3">
+	<h2>After Care Checkup</h2>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor.</p>
+
+			<p><b>Between which dates would you like to receive an aftercare home visit?</b></p>
+			
+			<p><b>FROM:</b><input type="date"  class="form-control"name="carevisit_1" max="2016-12-31" min="2014-01-31"  style="width:200px"><b>TO:</b><input type="date"  class="form-control" name="carevisit_2" max="2016-12-31" min="2014-01-31"  style="width:200px"></p>
+
+
+    		<p><b>Which of the following services did you think were exceptional?</b></p>
+    			<select class="form-control" name="Services" align="right"  style="width:200px" >
+        			<option value="0">-Option-</option>
+        			<option value="Nursing">Nursing</option>
+        			<option value="Porters">Porters</option>
+        			<option value="Consultants">Consultants</option>
+        			<option value="Doctors">Doctors</option>
+        			<option value="Cleaning">Cleaning</option>
+        			<option value="Surgoens">Surgeons</option>
+        		</select>
+        <br>
+        	<p><b>Do you have any comments about the care you received during this visit?</b></p>
+        		<textarea class="form-control" name="Comments" rows="3"  style="width:600px"></textarea><br>
+		<br>	
+
+   				<input class="btn btn-info" type="submit" value="Submit">
+				<input class="btn btn-info" type="reset" value="Reset">
+</div><!--Section 3 closed div-->
+		<br>	
+<div class="navbar navbar-default navbar-fixed-bottom"><!--Open navbar Footer-->
+		<div class="container"><!--Open footer container-->
+	<p class="navbar-text"><a href="http://www.aurahealthcare.com/" target="_blank"><img src="img/logo.png" alt="logo" align="bottom-left" style = "width:90px"></a></p>
+	
+		</div><!--Close footer container-->
+</div><!--Close navbar Footer-->
+
+</div><!--Close tab-content-->
+		<br>		
+
+</form> <!--Close Form tag-->
+</div> <!--Close container that holds tabs and form-->
+		<br>
+</body><!--Close-->
+<html><!--Close-->
